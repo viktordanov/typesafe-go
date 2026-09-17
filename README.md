@@ -2,8 +2,7 @@
 
 A Go client for the [TypeSafe API](https://docs.typesafe.ai).
 
-Requires Go 1.26 or newer. Use the latest patch release.
-The client uses `errors.AsType`, which Go 1.26 introduced.
+Requires Go 1.26 or newer.
 
 ```sh
 go get github.com/hhhapz/typesafe-go
@@ -60,12 +59,6 @@ ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 defer cancel()
 result, err := client.SystemOne(ctx, request)
 ```
-
-## Error details
-
-`APIError.Error()` includes the method, URL, status, and request ID.
-It excludes the provider message, which can contain submitted content.
-Use `errors.As` to inspect the `Message` and `Body` fields explicitly.
 
 Run the examples: `go test -v -run Example -args YOUR_API_KEY`.
 

@@ -65,7 +65,6 @@ func (e *APIError) RetryAfter() (time.Duration, bool) {
 	return parseRetryAfter(e.Header, time.Now())
 }
 
-// Error omits provider message text, which can contain submitted content.
 func (e *APIError) Error() string {
 	s := fmt.Sprintf("typesafe: %s %s: %d %s", e.Method, e.URL, e.StatusCode, http.StatusText(e.StatusCode))
 	if e.RequestID != "" {
