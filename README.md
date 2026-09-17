@@ -33,6 +33,12 @@ if err != nil {
 grade, _ := result.Score("grade")
 ```
 
+## Error details
+
+`APIError.Error()` includes the method, URL, status, and request ID.
+It excludes the provider message, which can contain submitted content.
+Use `errors.As` to inspect the `Message` and `Body` fields explicitly.
+
 Run the examples: `go test -v -run Example -args YOUR_API_KEY`.
 
 Licensed under [MIT](LICENSE).
