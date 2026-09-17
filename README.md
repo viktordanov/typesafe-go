@@ -2,6 +2,9 @@
 
 A Go client for the [TypeSafe API](https://docs.typesafe.ai).
 
+Requires Go 1.26 or newer. Use the latest patch release.
+The client uses `errors.AsType`, which Go 1.26 introduced.
+
 ```sh
 go get github.com/hhhapz/typesafe-go
 ```
